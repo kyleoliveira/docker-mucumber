@@ -16,6 +16,13 @@ if you intend to use this container interactively.
 
 Otherwise, you'll need to mount your Cucumber workspace at /cucumber/work.
 
+Additionally, if you'd like to use parallel_cucumber instead of cucumber,
+simply set the $PARALLEL environment variable to true, like so:
+
+```bash
+docker run -e PARALLEL=true -t -i cucommunityapps/mucumber
+``` 
+
 Includes the following gems by default:
 --------------------------------------
  - cucumber
