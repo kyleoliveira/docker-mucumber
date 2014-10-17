@@ -19,15 +19,18 @@ CMD ["x11vnc", "-forever", "-usepw", "-create"]
 ##################################   Ruby Gems   ##############################
 # When we build this monster we'd like to be able to install all needed gems.
 # We'll do this by importing from these predetermined locations:
-RUN ["mkdir", "/cucumber"]
+# * /cucumber/gems
+# * /cucumber/Gemfile
 
 # Add our scripts, etc.
+RUN ["mkdir", "-p", "/cucumber/work"]
 ADD bin/run_tests.sh /cucumber/run_tests.sh
 ADD bin/install_gems.sh /cucumber/install_gems.sh
 ADD lib/Gemfile /cucumber/Gemfile
 ADD gems /cucumber/gems
 
 # Ok, so, let's get going.
-WORKDIR /cucumber
+WORKDIR /cucumber/work
 RUN ["/cucumber/install_gems.sh"]
 ENTRYPOINT ["/cucumber/run_tests.sh"]
+CMD ["--help"]

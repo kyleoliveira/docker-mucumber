@@ -14,6 +14,8 @@ docker run -i [other options] --entrypoint /bin/bash -t mucumber
 
 if you intend to use this container interactively.
 
+Otherwise, you'll need to mount your Cucumber workspace at /cucumber/work.
+
 Includes the following gems by default:
 --------------------------------------
  - cucumber
