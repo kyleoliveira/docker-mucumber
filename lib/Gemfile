@@ -1,0 +1,7 @@
+# Default Gemfile provided so you at least have these gems preinstalled if you
+# just need an interactive container.
+source 'http://rubygems.org'
+
+gem 'cucumber'
+gem 'headless'
+gem 'parallel_tests'
