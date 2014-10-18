@@ -27,9 +27,7 @@ RUN ["mkdir", "-p", "/cucumber"]
 VOLUME /cucumber/work
 ADD bin/run_tests.sh /cucumber/run_tests.sh
 ADD bin/install_gems.sh /cucumber/install_gems.sh
-#ADD lib/Gemfile /cucumber/Gemfile
-ADD https://github.com/CU-CommunityApps/kuality-kfs-cu/raw/master/Gemfile /cucumber/Gemfile
-#ADD /home/stark/kuality/kuality-kfs-cu/Gemfile /cucumber/Gemfile
+ADD lib/Gemfile /cucumber/Gemfile
 ADD gems /cucumber/gems
 
 # Ok, so, let's get going.
