@@ -30,7 +30,7 @@ ADD lib/Gemfile /cucumber/Gemfile
 ADD gems /cucumber/gems
 
 # Ok, so, let's get going.
-WORKDIR /cucumber/work
 RUN ["/cucumber/install_gems.sh"]
+WORKDIR /cucumber/work
 ENTRYPOINT ["/cucumber/run_tests.sh"]
 CMD ["--help"]
