@@ -23,7 +23,8 @@ CMD ["x11vnc", "-forever", "-usepw", "-create"]
 # * /cucumber/Gemfile
 
 # Add our scripts, etc.
-RUN ["mkdir", "-p", "/cucumber/work"]
+RUN ["mkdir", "-p", "/cucumber"]
+VOLUME /cucumber/work
 ADD bin/run_tests.sh /cucumber/run_tests.sh
 ADD bin/install_gems.sh /cucumber/install_gems.sh
 ADD lib/Gemfile /cucumber/Gemfile
